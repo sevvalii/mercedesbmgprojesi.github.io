@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes-Benz Tarihçesi ve Modelleri</title>
+    <link rel="shortcut icon" href="images/mercedes.png" type="x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header img {
+            max-width: 120px;
+        }
+
+        header h1 {
+            margin: 10px 0;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            margin: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        article {
+            flex: 2;
+            margin-right: 20px;
+        }
+
+        aside {
+            flex: 1;
+            background: #e9e9e9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #000;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .car-model {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .car-model h3 {
+            margin: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background:  rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: url('your-background-image.jpg') no-repeat center center / cover; /* Arka plan resmini buraya ekleyin */
+            padding: 50px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 90%;
+            color: #fff;
+        }
+
+        .popup-content h2 {
+            margin: 0;
+            font-size: 32px;
+            font-family: 'Georgia', serif; /* Yazı tipi değişimi */
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 22px;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #f00;
+        }
+    </style>
+    <script>
+        function showSection(section) {
+            const sections = document.querySelectorAll('main > div');
+            sections.forEach(s => s.classList.add('hidden'));
+            document.getElementById(section).classList.remove('hidden');
+        }
+
+        function togglePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</head>
+<body onload="togglePopup()">
+    <header>
+        <img src="images/mercedes.png" alt="Mercedes Logo"> <!-- Logo dosyasının yolunu buraya ekleyin -->
+        <h1>Mercedes-Benz Tarihçesi ve Modelleri</h1>
+        <nav>
+            <ul>
+                <li><a href="javascript:void(0)" onclick="showSection('home')">Ana Sayfa</a></li>
+                <li><a href="javascript:void(0)" onclick="showSection('about')">Hakkında</a></li>
+                <li><a href="javascript:void(0)" onclick="showSection('survey')">Anket</a></li>
+                <li><a href="javascript:void(0)" onclick="showSection('contact')">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="home">
+            <article>
+                <h2>Mercedes-Benz Tarihçesi</h2>
+                <p>Mercedes-Benz, 1926 yılında Daimler-Motoren-Gesellschaft ve Benz & Cie. tarafından kuruldu. İlk otomobilin yaratılmasında öncü bir rol oynadı ve zamanla lüks otomobil segmentinin liderlerinden biri haline geldi. Yenilikçi teknolojileri, yüksek kalite standartları ve estetik tasarımları ile tanınan marka, otomobil tarihine damga vurdu.</p>
+                
+                <div class="car-model">
+                    <h3>Mercedes-Benz S-Class</h3>
+                    <p>S-Class, Mercedes-Benz'in lüks sedan segmentindeki amiral gemisidir. Konfor ve performansı mükemmel bir şekilde bir araya getirir. Gelişmiş teknoloji ve yenilikçi güvenlik özellikleri ile donatılmıştır. S-Class, özellikle uzun yolculuklar için tasarlanmış geniş iç mekan sunar. Ayrıca, güçlü motor seçenekleri ve zarif tasarımı ile dikkat çeker. Daha fazla bilgi için <a href="https://www.mercedes-benz.com.tr/passengercars/models/saloon/s-class/overview.html" target="_blank">buraya tıklayın</a>.</p>
+                </div>
+
+                <div class="car-model">
+                    <h3>Mercedes-Benz G-Class</h3>
+                    <p>G-Class, ikonik bir off-road araçtır. Sadece dayanıklılığı ile değil, aynı zamanda lüks iç mekanıyla da öne çıkar. Zorlu arazilerde bile üstün performans gösterir. G-Class, klasik tasarımı ile zamansız bir simge haline gelmiştir. Hem şehir içi hem de off-road sürüş deneyimi arayanlar için mükemmel bir tercihtir. Daha fazla bilgi için <a href="https://www.mercedes-benz.com.tr/passengercars/models/suv/g-class/overview.html" target="_blank">buraya tıklayın</a>.</p>
+                </div>
+
+                <div class="car-model">
+                    <h3>Mercedes-Benz C-Class</h3>
+                    <p>C-Class, kompakt lüks sedan olarak öne çıkar. Sportif sürüş dinamikleri ve estetik tasarımı ile dikkat çeker. Gelişmiş teknoloji ve konfor özellikleri sunar. C-Class, şehir içi kullanımlar için ideal bir seçenektir. Ayrıca, güçlü motor seçenekleri ve güvenlik donanımları ile de tanınır. Daha fazla bilgi için <a href="https://www.mercedes-benz.com.tr/passengercars/models/saloon/c-class/overview.html" target="_blank">buraya tıklayın</a>.</p>
+                </div>
+            </article>
+        </div>
+
+        <div id="about" class="hidden">
+            <article>
+                <h2>Hakkında</h2>
+                <p>Mercedes-Benz, dünya çapında lüks otomobil üreticisi olarak bilinir.
+                    Hepimizin çocukluk hayali,hayran olduğu araba markası.
+                    Hayran olmamak elde değil,yeniden aşık olmak için websitemi incele.</p>
+            </article>
+        </div>
+
+        <div id="survey" class="hidden">
+            <article>
+                <h2>Anket</h2>
+                <p>Otomobil tercihleriniz hakkında birkaç soru yanıtlayarak bize yardımcı olun:</p>
+                <form>
+                    <label for="meaning">Mercedes-Benz sizin için ne ifade ediyor?</label><br>
+                    <input type="text" id="meaning" name="meaning" required><br><br>
+
+                    <label for="favorite-model">Hayran olduğunuz Mercedes-Benz modeli nedir?</label><br>
+                    <input type="text" id="favorite-model" name="favorite-model" required><br><br>
+
+                    <label for="favorite-color">Favori Mercedes-Benz renginiz nedir?</label><br>
+                    <input type="text" id="favorite-color" name="favorite-color" required><br><br>
+
+                    <label for="comments">Sayfamız hakkında yorumlarınızı bekliyoruz:</label><br>
+                    <textarea id="comments" name="comments" rows="4" required></textarea><br><br>
+
+                    <label>Bizi beğendiniz mi?</label><br>
+                    <input type="radio" id="yes" name="like" value="yes">
+                    <label for="yes">Evet</label><br>
+                    <input type="radio" id="no" name="like" value="no">
+                    <label for="no">Hayır</label><br><br>
+
+                    <input type="submit" value="Gönder">
+                </form>
+            </article>
+        </div>
+
+        <div id="contact" class="hidden">
+            <article>
+                <h2>İletişim</h2>
+                <p>Bizimle iletişime geçmek için aşağıdaki bilgileri kullanabilirsiniz:</p>
+                <p>Email: isilaksevval@gmail.com</p>
+                <p>Telefon: +90 507 675 36 **</p>
+            </article>
+        </div>
+    </main>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="togglePopup()">×</span>
+            <h2>The Best or Nothing</h2>
+        </div>
+    </div>
+
+    <footer>
+        <p>Tüm hakları saklıdır &copy; 2024</p>
+    </footer>
+</body>
+</html>
